@@ -1,0 +1,545 @@
+/* =========================================================
+   USF Andaia — landing page escura, uma ideia por tela.
+   Letra grande, alto contraste, pouco texto.
+   ========================================================= */
+
+:root {
+    --fundo: #0a1112;
+    --fundo-alt: #0f1b1d;
+    --texto: #f3f7f7;
+    --texto-suave: #c3d4d7;    /* contraste alto sobre o fundo escuro */
+    --cor: #2cc5d6;            /* ciano claro: legível no escuro */
+    --cor-escura: #0a1112;
+    --vermelho: #b42318;
+    --falta: #ffc266;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 137.5%; /* 22px: letra grande desde o início */
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Raleway", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-weight: 500;
+    font-variant-numeric: lining-nums;
+    color: var(--texto);
+    background-color: var(--fundo);
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: var(--cor);
+}
+
+:focus-visible {
+    outline: 4px solid #f59e0b;
+    outline-offset: 4px;
+}
+
+.pagina {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.pular {
+    position: absolute;
+    left: 16px;
+    top: -200px;
+    z-index: 100;
+    padding: 12px 20px;
+    background: #ffffff;
+    color: var(--cor-escura);
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+.pular:focus {
+    top: 12px;
+}
+
+.destaque,
+.cor {
+    color: var(--cor);
+}
+
+/* Campo que a equipe ainda precisa preencher */
+.falta {
+    color: var(--falta);
+    font-style: italic;
+    border-bottom: 2px dashed currentColor;
+}
+
+/* ---------- Botões em pílula (como na referência) ---------- */
+
+.pilula {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    min-height: 64px;
+    padding: 0.4em 1.4em;
+    border-radius: 999px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.pilula:hover {
+    transform: translateY(-2px);
+}
+
+.pilula-cheia {
+    background-color: var(--cor);
+    color: var(--cor-escura);
+}
+
+.pilula-cheia:hover {
+    background-color: #5ad6e3;
+}
+
+.pilula-vazada {
+    border: 2px solid var(--texto);
+    color: var(--texto);
+}
+
+.pilula-vazada:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.pilula-branca {
+    background-color: #ffffff;
+    color: var(--vermelho);
+}
+
+.pilula strong {
+    font-size: 1.3em;
+    font-weight: 900;
+}
+
+.botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 2rem;
+}
+
+/* ---------- Topo ---------- */
+
+.topo {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(10, 17, 18, 0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Tudo no topo usa px: a barra não cresce com o A+ */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 80px;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: auto;
+    color: var(--texto);
+    font-size: 26px;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.marca-icone {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: var(--cor);
+    color: var(--cor-escura);
+    font-size: 24px;
+}
+
+.menu {
+    display: flex;
+    gap: 28px;
+    font-size: 20px;
+}
+
+.menu a {
+    color: var(--texto);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: var(--cor);
+}
+
+.fonte-controles {
+    display: flex;
+    gap: 6px;
+}
+
+.fonte-controles button {
+    width: 52px;
+    height: 52px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--texto);
+    font-family: inherit;
+    font-size: 19px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.fonte-controles button:hover {
+    border-color: var(--cor);
+}
+
+.fonte-controles button:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.nav-ligar {
+    min-height: 52px;
+    font-size: 20px;
+}
+
+/* Em telas estreitas, some com os links do menu (tudo está na rolagem) */
+@media (max-width: 900px) {
+    .menu {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        gap: 8px;
+    }
+
+    .marca {
+        font-size: 22px;
+    }
+
+    .marca-icone {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+
+    .fonte-controles button {
+        width: 46px;
+        height: 46px;
+    }
+
+    .nav-ligar {
+        width: 52px;
+        min-height: 52px;
+        padding: 0;
+        flex-shrink: 0;
+    }
+
+    .nav-ligar-texto {
+        display: none; /* só o ícone 📞 no celular */
+    }
+}
+
+/* ---------- Telas (uma ideia por vez) ---------- */
+
+.tela {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 4rem 0;
+}
+
+.tela-alt {
+    background-color: var(--fundo-alt);
+}
+
+.tela-abertura {
+    background:
+        radial-gradient(circle at 78% 50%, rgba(44, 197, 214, 0.16), transparent 42%),
+        var(--fundo);
+}
+
+.tela-emergencia {
+    background-color: var(--vermelho);
+}
+
+.tela-emergencia .ponto {
+    background-color: #ffffff;
+}
+
+.tela-emergencia .selo {
+    color: #ffffff;
+}
+
+/* Rótulo pequeno com ponto (como "● Thiago Cerqueira" na referência) */
+.selo {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5em;
+    margin-bottom: 1.2rem;
+    color: var(--texto-suave);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.ponto {
+    flex-shrink: 0;
+    width: 0.55em;
+    height: 0.55em;
+    border-radius: 50%;
+    background-color: var(--cor);
+}
+
+/*
+ * Título gigante em duas cores.
+ * min(..., 13vw) impede que ele passe da largura da tela,
+ * mesmo com a letra no máximo.
+ */
+.titulo {
+    font-size: min(clamp(2.6rem, 8vw, 5.2rem), 13vw);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.titulo .linha {
+    display: block;
+}
+
+.titulo .cor {
+    font-weight: 600;
+}
+
+.texto {
+    max-width: 30rem;
+    margin-top: 1.6rem;
+    color: var(--texto-suave);
+    font-size: 1.15rem;
+}
+
+.grande {
+    margin-top: 2rem;
+    font-size: min(1.6rem, 8vw);
+    font-weight: 700;
+}
+
+.numero-gigante {
+    margin-top: 1.6rem;
+    font-size: min(3.4rem, 15vw);
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+/* Abertura: texto + arte lado a lado (empilha quando não cabe) */
+.abertura-grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+
+.arte {
+    width: 100%;
+    max-width: 440px;
+    justify-self: center;
+    filter: drop-shadow(0 0 40px rgba(44, 197, 214, 0.35));
+}
+
+/* ---------- Áreas I, II, III ---------- */
+
+.areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+    gap: 1.5rem;
+    margin-top: 2.4rem;
+}
+
+.areas li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.area-num {
+    font-size: min(4rem, 20vw);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--cor);
+}
+
+/* ---------- Ícones grandes (o que levar, serviços) ---------- */
+
+.icones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+    gap: 2rem;
+    margin-top: 2.4rem;
+}
+
+.icones li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.icones span {
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+.icones-muitos {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+    gap: 1.6rem 1.2rem;
+}
+
+.icones-muitos span {
+    font-size: 2.4rem;
+}
+
+/* ---------- Passos (remédio) ---------- */
+
+.passos {
+    display: grid;
+    gap: 1.2rem;
+    margin-top: 2.4rem;
+}
+
+.passos li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.passo-num {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background-color: var(--cor);
+    color: var(--cor-escura);
+    font-weight: 900;
+}
+
+/* ---------- Semana ---------- */
+
+.semana {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+    gap: 1.4rem;
+    margin-top: 2.4rem;
+}
+
+.semana li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.semana strong {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--cor);
+}
+
+/* ---------- Equipe (discreto) ---------- */
+
+.equipe {
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.links-equipe {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 2rem;
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+
+.links-equipe em {
+    opacity: 0.75;
+    font-size: 0.85em;
+}
+
+/* ---------- Rodapé ---------- */
+
+.rodape {
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    color: var(--texto-suave);
+}
+
+.rodape-pequeno {
+    margin-top: 0.4rem;
+    font-size: 0.8rem;
+}
+
+/* ---------- Aparecer ao rolar ---------- */
+/* Só esconde se o JavaScript estiver ativo (classe "js" no <html>) */
+
+.js .revelar {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.js .revelar.visivel {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .js .revelar {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .pilula {
+        transition: none;
+    }
+}

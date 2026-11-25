@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="USF Andaia: onde fica, horário, serviços, remédios e vacinas. Sua saúde mais perto de você.">
+    <title>USF Andaia — Unidade de Saúde da Família</title>
+    <link rel="icon" href="src/Favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <a href="#inicio" class="pular">Pular para o conteúdo</a>
+
+    <!-- ===================== TOPO ===================== -->
+    <header class="topo">
+        <nav class="nav pagina" aria-label="Principal">
+            <a href="#inicio" class="marca">
+                <span class="marca-icone" aria-hidden="true">✚</span>
+                USF <span class="destaque">Andaia</span>
+            </a>
+            <ul class="menu">
+                <li><a href="#horario">Horário</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#remedios">Remédios</a></li>
+            </ul>
+            <div class="fonte-controles" role="group" aria-label="Tamanho da letra">
+                <button type="button" data-fonte="-1" aria-label="Diminuir a letra">A−</button>
+                <button type="button" data-fonte="1" aria-label="Aumentar a letra">A+</button>
+            </div>
+            <!-- Quando tiver o número, troque o href: tel:+5571XXXXXXXXX -->
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. ABERTURA -->
+        <section class="tela tela-abertura" id="inicio">
+            <div class="pagina abertura-grade">
+                <div>
+                    <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Unidade de Saúde da Família</p>
+                    <h1 class="titulo revelar">
+                        <span class="linha">Sua saúde</span>
+                        <span class="linha">mais perto</span>
+                        <span class="linha cor">de você.</span>
+                    </h1>
+                    <p class="texto revelar">A USF Andaia cuida de você e da sua família, de graça, pelo SUS.</p>
+                    <div class="botoes revelar">
+                        <a href="#onde" class="pilula pilula-cheia">Onde fica <span aria-hidden="true">→</span></a>
+                        <a href="#horario" class="pilula pilula-vazada">Horário</a>
+                    </div>
+                </div>
+
+                <!-- Arte decorativa: cruz de saúde com anéis "pixelados" -->
+                <svg class="arte revelar" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+                    <defs>
+                        <radialGradient id="brilho" cx="38%" cy="34%" r="70%">
+                            <stop offset="0" stop-color="#9af3fa"/>
+                            <stop offset="0.5" stop-color="#22bfd0"/>
+                            <stop offset="1" stop-color="#034e57"/>
+                        </radialGradient>
+                    </defs>
+                    <circle cx="200" cy="200" r="192" fill="none" stroke="#22bfd0" stroke-opacity="0.12" stroke-width="6" stroke-dasharray="6 10"/>
+                    <circle cx="200" cy="200" r="174" fill="none" stroke="#22bfd0" stroke-opacity="0.3" stroke-width="8" stroke-dasharray="8 6"/>
+                    <circle cx="200" cy="200" r="156" fill="none" stroke="#22bfd0" stroke-opacity="0.55" stroke-width="10" stroke-dasharray="10 4"/>
+                    <circle cx="200" cy="200" r="138" fill="url(#brilho)"/>
+                    <g fill="#034e57" fill-opacity="0.35">
+                        <rect x="110" y="250" width="14" height="14"/><rect x="124" y="264" width="14" height="14"/>
+                        <rect x="268" y="120" width="14" height="14"/><rect x="282" y="134" width="14" height="14"/>
+                        <rect x="250" y="280" width="14" height="14"/>
+                    </g>
+                    <g fill="#ffffff">
+                        <rect x="168" y="112" width="64" height="176" rx="10"/>
+                        <rect x="112" y="168" width="176" height="64" rx="10"/>
+                    </g>
+                    <g stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.85">
+                        <path d="M60 318h24M72 306v24"/>
+                        <path d="M330 300h20M340 290v20"/>
+                        <path d="M318 60h16M326 52v16"/>
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <!-- 2. ONDE FICA -->
+        <section class="tela tela-alt" id="onde">
+            <div class="pagina">
+                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Onde fica</p>
+                <h2 class="titulo revelar">
+                    <span class="linha">Estamos</span>
+                    <span class="linha cor">aqui.</span>
+                </h2>
+                <p class="grande revelar" href="https://maps.app.goo.gl/ms4zmx2LoHrXtdqk9">📍 <a target="_blank" class="falta">R. Teodoro Dias Barreto, 787 - Andaiá, Santo Antônio de Jesus - BA, 44434-532</a></p>
+                <div class="botoes revelar">
+                    <!-- Troque pelo link do Google Maps da unidade -->
+                    <a href="https://maps.app.goo.gl/ms4zmx2LoHrXtdqk9" class="pilula pilula-cheia">Abrir no mapa <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. HORÁRIO -->
+        <section class="tela" id="horario">
+            <div class="pagina">
+                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Horário</p>
+                <h2 class="titulo revelar">
+                    <span class="linha">Segunda</span>
+                    <span class="linha">a sexta.</span>
+                </h2>
+                <p class="numero-gigante cor revelar"><span class="falta">07h até 12h <br> 13h até 17h</span></p>
+                <p class="texto revelar">Sábado, domingo e feriado: fechado.</p>
+            </div>
+        </section>
+
+        <!-- 5. O QUE LEVAR -->
+        <section class="tela tela-alt" id="levar">
+            <div class="pagina">
+                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Antes de sair de casa</p>
+                <h2 class="titulo revelar">
+                    <span class="linha">Não</span>
+                    <span class="linha cor">esqueça.</span>
+                </h2>
+                <ul class="icones">
+                    <li class="revelar"><span aria-hidden="true">🪪</span>Documento com foto</li>
+                    <li class="revelar"><span aria-hidden="true">💳</span>Cartão do SUS</li>
+                    <li class="revelar"><span aria-hidden="true">📒</span>Caderneta de vacina</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 6. SERVIÇOS -->
+        <section class="tela" id="servicos">
+            <div class="pagina">
+                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Serviços gratuitos</p>
+                <h2 class="titulo revelar">
+                    <span class="linha">O que fazemos</span>
+                    <span class="linha cor">por você.</span>
+                </h2>
+                <ul class="icones icones-muitos">
+                    <li class="revelar"><span aria-hidden="true">🩺</span>Consulta</li>
+                    <li class="revelar"><span aria-hidden="true">🦷</span>Dentista</li>
+                    <li class="revelar"><span aria-hidden="true">💉</span>Vacina</li>
+                    <li class="revelar"><span aria-hidden="true">❤️</span>Pressão e diabetes</li>
+                    <li class="revelar"><span aria-hidden="true">🤰</span>Gravidez</li>
+                    <li class="revelar"><span aria-hidden="true">👶</span>Criança</li>
+                    <li class="revelar"><span aria-hidden="true">🩹</span>Curativo</li>
+                    <li class="revelar"><span aria-hidden="true">🏠</span>Visita em casa</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 7. REMÉDIOS -->
+        <section class="tela tela-alt" id="remedios">
+            <div class="pagina">
+                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Remédios</p>
+                <h2 class="titulo revelar">
+                    <span class="linha">Precisa de</span>
+                    <span class="linha cor">remédio?</span>
+                </h2>
+                <ol class="passos">
+                    <li class="revelar"><span class="passo-num">1</span>Traga a receita</li>
+                    <li class="revelar"><span class="passo-num">2</span>Traga o documento de identidade</li>
+                    <li class="revelar"><span class="passo-num">3</span>Retire na farmácia da USF</li>
+                </ol>
+                <div class="botoes revelar">
+                    <!-- Troque pelo link da lista de medicamentos disponíveis -->
+                    <!-- botão para ver lista de remedios disponiveis em aguardo 
+                    
+                    <a href="#" class="pilula pilula-vazada">Ver remédios disponíveis <span aria-hidden="true">→</span></a>
+                    
+                    -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. SEMANA -->
+        <section class="tela" id="semana">
+            <div class="pagina">
+                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Agenda</p>
+                <h2 class="titulo revelar">
+                    <span class="linha">Esta semana</span>
+                    <span class="linha cor">na USF.</span>
+                </h2>
+                <ul class="semana">
+                    <li class="revelar"><strong>Seg</strong><span class="falta">atividade</span></li>
+                    <li class="revelar"><strong>Ter</strong><span class="falta">atividade</span></li>
+                    <li class="revelar"><strong>Qua</strong><span class="falta">atividade</span></li>
+                    <li class="revelar"><strong>Qui</strong><span class="falta">atividade</span></li>
+                    <li class="revelar"><strong>Sex</strong><span class="falta">atividade</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 9. EMERGÊNCIA -->
+        <section class="tela tela-emergencia" id="emergencia">
+            <div class="pagina">
+                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Emergência</p>
+                <h2 class="titulo revelar">
+                    <span class="linha">Caso grave?</span>
+                    <span class="linha">Ligue já.</span>
+                </h2>
+                <div class="botoes revelar">
+                    <a href="tel:192" class="pilula pilula-branca"><strong>192</strong> SAMU</a>
+                    <a href="tel:193" class="pilula pilula-vazada"><strong>193</strong> Bombeiros</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. EQUIPE (discreto) -->
+        <section class="equipe" id="equipe">
+            <div class="pagina">
+                <p class="selo"><span class="ponto" aria-hidden="true"></span>Links Úteis</p>
+                <ul class="links-equipe">
+        
+                    <li><a href="https://cnes.datasus.gov.br/" target="_blank" rel="noopener">CNES ↗</a></li>
+                    <li><a href="https://www.gov.br/saude/" target="_blank" rel="noopener">Ministério da Saúde ↗</a></li>
+                    <li><a href="https://www.saude.ba.gov.br/" target="_blank" rel="noopener">SESAB ↗</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="pagina">
+            <p><span class="destaque">USF Andaia</span> · áreas I, II e III</p>
+            <p class="rodape-pequeno">&copy; <span id="ano"></span> · USF Digital · PET - Saúde digital · GAT 9</p>
+        </div>
+    </footer>
+</body>
+</html>
