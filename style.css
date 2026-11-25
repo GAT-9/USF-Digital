@@ -161,6 +161,23 @@ a {
     margin-top: 2rem;
 }
 
+/* Botões da abertura: sempre lado a lado, mesmo com texto longo
+   (o texto quebra dentro do botão em vez de empurrar o botão para baixo) */
+.tela-abertura .botoes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, max-content));
+    gap: 12px;
+}
+
+.tela-abertura .pilula {
+    min-height: 60px;
+    padding: 0.45em 1.2em;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    white-space: normal;
+    text-align: center;
+}
+
 /* ---------- Topo ---------- */
 
 .topo {
@@ -418,7 +435,7 @@ main > section {
 
 @media (min-width: 760px) {
     .abertura-grade {
-        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
     }
 }
 
