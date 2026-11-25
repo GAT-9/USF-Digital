@@ -54,5 +54,73 @@ document.querySelectorAll('[data-fonte]').forEach((botao) => {
 
 aplicarFonte();
 
+// ---------- Agenda: abas por equipe ----------
+// Sem JavaScript, todas as equipes aparecem uma embaixo da outra.
+const abas = [...document.querySelectorAll('.aba')];
+
+function selecionarAba(aba) {
+    abas.forEach((a) => {
+        const ativa = a === aba;
+        a.setAttribute('aria-selected', ativa);
+        a.tabIndex = ativa ? 0 : -1;
+        document.getElementById(a.getAttribute('aria-controls')).hidden = !ativa;
+    });
+}
+
+abas.forEach((aba, i) => {
+    aba.addEventListener('click', () => selecionarAba(aba));
+    aba.addEventListener('keydown', (ev) => {
+        const passo = { ArrowRight: 1, ArrowLeft: -1 }[ev.key];
+        if (!passo) return;
+        const proxima = abas[(i + passo + abas.length) % abas.length];
+        selecionarAba(proxima);
+        proxima.focus();
+    });
+});
+if (abas.length) selecionarAba(abas[0]);
+
+// ---------- Remédios: mostrar lista e buscar ----------
+// O botão abre a lista aqui mesmo, sem sair da página.
+const btnRemedios = document.getElementById('btn-remedios');
+const listaRemedios = document.getElementById('lista-remedios');
+const busca = document.getElementById('busca-remedio');
+const semResultado = document.getElementById('sem-resultado');
+
+if (btnRemedios && listaRemedios) {
+    btnRemedios.hidden = false;
+    listaRemedios.hidden = true;
+
+    btnRemedios.addEventListener('click', () => {
+        const abrir = listaRemedios.hidden;
+        listaRemedios.hidden = !abrir;
+        btnRemedios.setAttribute('aria-expanded', abrir);
+        btnRemedios.firstChild.textContent = abrir ? 'Esconder lista ' : 'Ver remédios disponíveis ';
+        btnRemedios.querySelector('span').textContent = abrir ? '↑' : '↓';
+        if (abrir) busca.focus({ preventScroll: true });
+    });
+}
+
+// Ignora acentos e maiúsculas: "ácido" encontra "acido"
+const normalizar = (t) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+
+if (busca) {
+    busca.addEventListener('input', () => {
+        const termo = normalizar(busca.value);
+        let achou = 0;
+        document.querySelectorAll('.categoria').forEach((cat) => {
+            const nomeCategoria = normalizar(cat.querySelector('h3').textContent);
+            let visiveis = 0;
+            cat.querySelectorAll('li').forEach((item) => {
+                const mostra = !termo || nomeCategoria.includes(termo) || normalizar(item.textContent).includes(termo);
+                item.hidden = !mostra;
+                if (mostra) visiveis++;
+            });
+            cat.hidden = visiveis === 0;
+            achou += visiveis;
+        });
+        semResultado.hidden = achou > 0;
+    });
+}
+
 // ---------- Ano atual no rodapé ----------
 document.getElementById('ano').textContent = new Date().getFullYear();

@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="USF Andaia: onde fica, horário, serviços, remédios e vacinas. Sua saúde mais perto de você.">
-    <title>USF Andaia — Unidade de Saúde da Família</title>
-    <link rel="icon" href="src/Favicon.png" type="image/x-icon">
+    <meta name="description" content="USF Andaiá: serviços, horários, agenda dos profissionais, remédios da farmácia, equipes e encaminhamentos. Tudo em uma página.">
+    <title>USF Andaiá — Unidade de Saúde da Família</title>
+    <link rel="icon" href="src/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="src/Favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&display=swap">
@@ -20,18 +21,18 @@
         <nav class="nav pagina" aria-label="Principal">
             <a href="#inicio" class="marca">
                 <span class="marca-icone" aria-hidden="true">✚</span>
-                USF <span class="destaque">Andaia</span>
+                USF <span class="destaque">Andaiá</span>
             </a>
             <ul class="menu">
-                <li><a href="#horario">Horário</a></li>
                 <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#agenda">Agenda</a></li>
                 <li><a href="#remedios">Remédios</a></li>
+                <li><a href="#equipes">Equipes</a></li>
             </ul>
             <div class="fonte-controles" role="group" aria-label="Tamanho da letra">
                 <button type="button" data-fonte="-1" aria-label="Diminuir a letra">A−</button>
                 <button type="button" data-fonte="1" aria-label="Aumentar a letra">A+</button>
             </div>
-            <!-- Quando tiver o número, troque o href: tel:+5571XXXXXXXXX -->
         </nav>
     </header>
 
@@ -46,10 +47,10 @@
                         <span class="linha">mais perto</span>
                         <span class="linha cor">de você.</span>
                     </h1>
-                    <p class="texto revelar">A USF Andaia cuida de você e da sua família, de graça, pelo SUS.</p>
+                    <p class="texto revelar">Serviços, horários, agenda dos profissionais e remédios da farmácia da USF Andaiá. Tudo aqui, nesta página.</p>
                     <div class="botoes revelar">
-                        <a href="#onde" class="pilula pilula-cheia">Onde fica <span aria-hidden="true">→</span></a>
-                        <a href="#horario" class="pilula pilula-vazada">Horário</a>
+                        <a href="#servicos" class="pilula pilula-cheia">Ver serviços <span aria-hidden="true">↓</span></a>
+                        <a href="#remedios" class="pilula pilula-vazada">Remédios</a>
                     </div>
                 </div>
 
@@ -57,16 +58,16 @@
                 <svg class="arte revelar" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
                     <defs>
                         <radialGradient id="brilho" cx="38%" cy="34%" r="70%">
-                            <stop offset="0" stop-color="#9af3fa"/>
-                            <stop offset="0.5" stop-color="#22bfd0"/>
-                            <stop offset="1" stop-color="#034e57"/>
+                            <stop offset="0" stop-color="#9cd2ff"/>
+                            <stop offset="0.5" stop-color="#1677c9"/>
+                            <stop offset="1" stop-color="#0b3f6e"/>
                         </radialGradient>
                     </defs>
-                    <circle cx="200" cy="200" r="192" fill="none" stroke="#22bfd0" stroke-opacity="0.12" stroke-width="6" stroke-dasharray="6 10"/>
-                    <circle cx="200" cy="200" r="174" fill="none" stroke="#22bfd0" stroke-opacity="0.3" stroke-width="8" stroke-dasharray="8 6"/>
-                    <circle cx="200" cy="200" r="156" fill="none" stroke="#22bfd0" stroke-opacity="0.55" stroke-width="10" stroke-dasharray="10 4"/>
+                    <circle cx="200" cy="200" r="192" fill="none" stroke="#1677c9" stroke-opacity="0.12" stroke-width="6" stroke-dasharray="6 10"/>
+                    <circle cx="200" cy="200" r="174" fill="none" stroke="#1677c9" stroke-opacity="0.3" stroke-width="8" stroke-dasharray="8 6"/>
+                    <circle cx="200" cy="200" r="156" fill="none" stroke="#1677c9" stroke-opacity="0.55" stroke-width="10" stroke-dasharray="10 4"/>
                     <circle cx="200" cy="200" r="138" fill="url(#brilho)"/>
-                    <g fill="#034e57" fill-opacity="0.35">
+                    <g fill="#0b3f6e" fill-opacity="0.35">
                         <rect x="110" y="250" width="14" height="14"/><rect x="124" y="264" width="14" height="14"/>
                         <rect x="268" y="120" width="14" height="14"/><rect x="282" y="134" width="14" height="14"/>
                         <rect x="250" y="280" width="14" height="14"/>
@@ -75,46 +76,35 @@
                         <rect x="168" y="112" width="64" height="176" rx="10"/>
                         <rect x="112" y="168" width="176" height="64" rx="10"/>
                     </g>
-                    <g stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.85">
-                        <path d="M60 318h24M72 306v24"/>
-                        <path d="M330 300h20M340 290v20"/>
-                        <path d="M318 60h16M326 52v16"/>
-                    </g>
                 </svg>
             </div>
         </section>
 
-        <!-- 2. ONDE FICA -->
+        <!-- 2. ONDE FICA + HORÁRIO -->
         <section class="tela tela-alt" id="onde">
-            <div class="pagina">
-                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Onde fica</p>
-                <h2 class="titulo revelar">
-                    <span class="linha">Estamos</span>
-                    <span class="linha cor">aqui.</span>
-                </h2>
-                <p class="grande revelar" href="https://maps.app.goo.gl/ms4zmx2LoHrXtdqk9">📍 <a target="_blank" class="falta">R. Teodoro Dias Barreto, 787 - Andaiá, Santo Antônio de Jesus - BA, 44434-532</a></p>
-                <div class="botoes revelar">
-                    <!-- Troque pelo link do Google Maps da unidade -->
-                    <a href="https://maps.app.goo.gl/ms4zmx2LoHrXtdqk9" class="pilula pilula-cheia">Abrir no mapa <span aria-hidden="true">→</span></a>
+            <div class="pagina duas-colunas">
+                <div>
+                    <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Onde fica e quando abre</p>
+                    <h2 class="titulo revelar">
+                        <span class="linha">Estamos</span>
+                        <span class="linha cor">aqui.</span>
+                    </h2>
+                    <p class="grande revelar">📍 R. Teodoro Dias Barreto, 787 — Andaiá, Santo Antônio de Jesus – BA, 44434-532</p>
+                    <div class="horario revelar" id="horario">
+                        <p class="horario-dias">Segunda a sexta</p>
+                        <p class="numero-gigante cor"><span class="falta">07h às 12h<br>13h às 17h</span></p>
+                        <p class="texto">Sábado, domingo e feriado: fechado.</p>
+                    </div>
                 </div>
+                <iframe class="mapa revelar"
+                    title="Mapa com a localização da USF Andaiá"
+                    src="https://www.google.com/maps?q=R.+Teodoro+Dias+Barreto,+787+-+Andai%C3%A1,+Santo+Ant%C3%B4nio+de+Jesus+-+BA,+44434-532&amp;output=embed"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
 
-        <!-- 4. HORÁRIO -->
-        <section class="tela" id="horario">
-            <div class="pagina">
-                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Horário</p>
-                <h2 class="titulo revelar">
-                    <span class="linha">Segunda</span>
-                    <span class="linha">a sexta.</span>
-                </h2>
-                <p class="numero-gigante cor revelar"><span class="falta">07h até 12h <br> 13h até 17h</span></p>
-                <p class="texto revelar">Sábado, domingo e feriado: fechado.</p>
-            </div>
-        </section>
-
-        <!-- 5. O QUE LEVAR -->
-        <section class="tela tela-alt" id="levar">
+        <!-- 3. O QUE LEVAR -->
+        <section class="tela" id="levar">
             <div class="pagina">
                 <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Antes de sair de casa</p>
                 <h2 class="titulo revelar">
@@ -125,59 +115,279 @@
                     <li class="revelar"><span aria-hidden="true">🪪</span>Documento com foto</li>
                     <li class="revelar"><span aria-hidden="true">💳</span>Cartão do SUS</li>
                     <li class="revelar"><span aria-hidden="true">📒</span>Caderneta de vacina</li>
+                    <li class="revelar"><span aria-hidden="true">📄</span>Receitas e exames</li>
                 </ul>
             </div>
         </section>
 
-        <!-- 6. SERVIÇOS -->
-        <section class="tela" id="servicos">
+        <!-- 4. SERVIÇOS -->
+        <section class="tela tela-alt" id="servicos">
             <div class="pagina">
-                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Serviços gratuitos</p>
+                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Serviços gratuitos pelo SUS</p>
                 <h2 class="titulo revelar">
                     <span class="linha">O que fazemos</span>
                     <span class="linha cor">por você.</span>
                 </h2>
                 <ul class="icones icones-muitos">
-                    <li class="revelar"><span aria-hidden="true">🩺</span>Consulta</li>
-                    <li class="revelar"><span aria-hidden="true">🦷</span>Dentista</li>
-                    <li class="revelar"><span aria-hidden="true">💉</span>Vacina</li>
-                    <li class="revelar"><span aria-hidden="true">❤️</span>Pressão e diabetes</li>
-                    <li class="revelar"><span aria-hidden="true">🤰</span>Gravidez</li>
-                    <li class="revelar"><span aria-hidden="true">👶</span>Criança</li>
-                    <li class="revelar"><span aria-hidden="true">🩹</span>Curativo</li>
-                    <li class="revelar"><span aria-hidden="true">🏠</span>Visita em casa</li>
+                    <li class="revelar"><span aria-hidden="true">🩺</span>Consulta médica</li>
+                    <li class="revelar"><span aria-hidden="true">👩‍⚕️</span>Consulta de enfermagem</li>
+                    <li class="revelar"><span aria-hidden="true">🦷</span>Odontologia</li>
+                    <li class="revelar"><span aria-hidden="true">💉</span>Vacinação</li>
+                    <li class="revelar"><span aria-hidden="true">🤰</span>Pré-natal</li>
+                    <li class="revelar"><span aria-hidden="true">👶</span>Puericultura (saúde da criança)</li>
+                    <li class="revelar"><span aria-hidden="true">❤️</span>Hiperdia (pressão e diabetes)</li>
+                    <li class="revelar"><span aria-hidden="true">🩹</span>Curativos</li>
+                    <li class="revelar"><span aria-hidden="true">✂️</span>Pequenos procedimentos</li>
+                    <li class="revelar"><span aria-hidden="true">🏠</span>Visitas domiciliares</li>
+                    <li class="revelar"><span aria-hidden="true">👥</span>Grupos</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 5. AGENDA DOS PROFISSIONAIS -->
+        <section class="tela" id="agenda">
+            <div class="pagina">
+                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Agenda dos profissionais</p>
+                <h2 class="titulo revelar">
+                    <span class="linha">Quem atende</span>
+                    <span class="linha cor">em cada dia.</span>
+                </h2>
+                <p class="texto revelar">Escolha a sua equipe. Não sabe qual é? Pergunte ao seu agente comunitário ou na recepção.</p>
+                <div class="abas revelar" role="tablist" aria-label="Escolha sua equipe">
+                    <button type="button" class="aba" role="tab" id="aba-andaia-1" aria-controls="painel-andaia-1" aria-selected="true">Andaiá I</button>
+                    <button type="button" class="aba" role="tab" id="aba-andaia-2" aria-controls="painel-andaia-2" aria-selected="false">Andaiá II</button>
+                    <button type="button" class="aba" role="tab" id="aba-andaia-3" aria-controls="painel-andaia-3" aria-selected="false">Andaiá III</button>
+                </div>
+                <div class="painel-aba" role="tabpanel" id="painel-andaia-1" aria-labelledby="aba-andaia-1">
+                    <h3 class="painel-titulo">Andaiá I</h3>
+                    <ul class="profissionais">
+                        <li><span class="prof-icone" aria-hidden="true">🩺</span><span class="prof-papel">Médica</span><strong>Ana Verena</strong></li>
+                        <li><span class="prof-icone" aria-hidden="true">👩‍⚕️</span><span class="prof-papel">Enfermeira</span><strong>Erojane</strong></li>
+                    </ul>
+                    <table class="agenda">
+                        <thead><tr><th scope="col">Dia</th><th scope="col">Médico · manhã</th><th scope="col">Médico · tarde</th><th scope="col">Enfermeira · manhã</th><th scope="col">Enfermeira · tarde</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">Segunda</th><td data-rotulo="Médico · manhã">População geral</td><td data-rotulo="Médico · tarde">Auto agenda</td><td data-rotulo="Enfermeira · manhã">Hiperdia</td><td data-rotulo="Enfermeira · tarde">Pré-natal</td></tr>
+                            <tr><th scope="row">Terça</th><td data-rotulo="Médico · manhã">Estágio (fora)</td><td data-rotulo="Médico · tarde">Hiperdia</td><td data-rotulo="Enfermeira · manhã">Pré-natal</td><td data-rotulo="Enfermeira · tarde">Planejamento familiar</td></tr>
+                            <tr><th scope="row">Quarta</th><td data-rotulo="Médico · manhã">Pré-natal</td><td data-rotulo="Médico · tarde">Aula (turno fora)</td><td data-rotulo="Enfermeira · manhã">Preventivo</td><td data-rotulo="Enfermeira · tarde">Demanda espontânea</td></tr>
+                            <tr><th scope="row">Quinta</th><td data-rotulo="Médico · manhã">Puericultura</td><td data-rotulo="Médico · tarde">Hiperdia</td><td data-rotulo="Enfermeira · manhã">Puericultura</td><td data-rotulo="Enfermeira · tarde">Puericultura</td></tr>
+                            <tr><th scope="row">Sexta</th><td data-rotulo="Médico · manhã">Visita domiciliar</td><td data-rotulo="Médico · tarde">Administrativo</td><td data-rotulo="Enfermeira · manhã">Visita domiciliar / Hiperdia</td><td data-rotulo="Enfermeira · tarde">Demanda espontânea</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="painel-aba" role="tabpanel" id="painel-andaia-2" aria-labelledby="aba-andaia-2">
+                    <h3 class="painel-titulo">Andaiá II</h3>
+                    <ul class="profissionais">
+                        <li><span class="prof-icone" aria-hidden="true">🩺</span><span class="prof-papel">Médica</span><strong>Aline</strong></li>
+                        <li><span class="prof-icone" aria-hidden="true">👩‍⚕️</span><span class="prof-papel">Enfermeira</span><strong>Gemima</strong></li>
+                    </ul>
+                    <table class="agenda">
+                        <thead><tr><th scope="col">Dia</th><th scope="col">Médico · manhã</th><th scope="col">Médico · tarde</th><th scope="col">Enfermeira · manhã</th><th scope="col">Enfermeira · tarde</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">Segunda</th><td data-rotulo="Médico · manhã">População geral</td><td data-rotulo="Médico · tarde">Hiperdia</td><td data-rotulo="Enfermeira · manhã">Hiperdia</td><td data-rotulo="Enfermeira · tarde">1º pré-natal</td></tr>
+                            <tr><th scope="row">Terça</th><td data-rotulo="Médico · manhã">Pré-natal</td><td data-rotulo="Médico · tarde">—</td><td data-rotulo="Enfermeira · manhã">Pré-natal</td><td data-rotulo="Enfermeira · tarde">Demanda livre</td></tr>
+                            <tr><th scope="row">Quarta</th><td data-rotulo="Médico · manhã">Visita domiciliar</td><td data-rotulo="Médico · tarde">Administrativo</td><td data-rotulo="Enfermeira · manhã">Preventivo</td><td data-rotulo="Enfermeira · tarde">Planejamento familiar</td></tr>
+                            <tr><th scope="row">Quinta</th><td data-rotulo="Médico · manhã">Puericultura</td><td data-rotulo="Médico · tarde">Administrativo</td><td data-rotulo="Enfermeira · manhã">Puericultura</td><td data-rotulo="Enfermeira · tarde">Puericultura</td></tr>
+                            <tr><th scope="row">Sexta</th><td data-rotulo="Médico · manhã">Planejamento familiar</td><td data-rotulo="Médico · tarde">Planejamento familiar</td><td data-rotulo="Enfermeira · manhã">Visita domiciliar</td><td data-rotulo="Enfermeira · tarde">Administrativo</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="painel-aba" role="tabpanel" id="painel-andaia-3" aria-labelledby="aba-andaia-3">
+                    <h3 class="painel-titulo">Andaiá III</h3>
+                    <ul class="profissionais">
+                        <li><span class="prof-icone" aria-hidden="true">🩺</span><span class="prof-papel">Médico</span><strong>Lucas</strong></li>
+                        <li><span class="prof-icone" aria-hidden="true">👩‍⚕️</span><span class="prof-papel">Enfermeira</span><strong>Queli</strong></li>
+                    </ul>
+                    <table class="agenda">
+                        <thead><tr><th scope="col">Dia</th><th scope="col">Médico · manhã</th><th scope="col">Médico · tarde</th><th scope="col">Enfermeira · manhã</th><th scope="col">Enfermeira · tarde</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">Segunda</th><td data-rotulo="Médico · manhã">Puericultura</td><td data-rotulo="Médico · tarde">Hiperdia</td><td data-rotulo="Enfermeira · manhã">—</td><td data-rotulo="Enfermeira · tarde">Demanda livre</td></tr>
+                            <tr><th scope="row">Terça</th><td data-rotulo="Médico · manhã">Estágio (fora)</td><td data-rotulo="Médico · tarde">População geral</td><td data-rotulo="Enfermeira · manhã">Pré-natal</td><td data-rotulo="Enfermeira · tarde">Administrativo</td></tr>
+                            <tr><th scope="row">Quarta</th><td data-rotulo="Médico · manhã">Pré-natal</td><td data-rotulo="Médico · tarde">Aula (turno fora)</td><td data-rotulo="Enfermeira · manhã">Preventivo</td><td data-rotulo="Enfermeira · tarde">Puericultura / Planejamento familiar</td></tr>
+                            <tr><th scope="row">Quinta</th><td data-rotulo="Médico · manhã">Hiperdia</td><td data-rotulo="Médico · tarde">População geral</td><td data-rotulo="Enfermeira · manhã">—</td><td data-rotulo="Enfermeira · tarde">—</td></tr>
+                            <tr><th scope="row">Sexta</th><td data-rotulo="Médico · manhã">Visita domiciliar</td><td data-rotulo="Médico · tarde">Administrativo</td><td data-rotulo="Enfermeira · manhã">Visita domiciliar</td><td data-rotulo="Enfermeira · tarde">Demanda livre</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. EQUIPES E MICROÁREAS -->
+        <section class="tela tela-alt" id="equipes">
+            <div class="pagina">
+                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Equipes e território</p>
+                <h2 class="titulo revelar">
+                    <span class="linha">Três equipes,</span>
+                    <span class="linha cor">uma USF.</span>
+                </h2>
+                <ul class="cartoes">
+                    <li class="cartao revelar">
+                        <h3>Andaiá I</h3>
+                        <p><strong>Médica:</strong> Ana Verena</p>
+                        <p><strong>Enfermeira:</strong> Erojane</p>
+                        <p><strong>Agentes comunitários:</strong> Joelma, Clélia, Joselita Couto, Sandra, Vanusa e Maria do Carmo (Lôra)</p>
+                    </li>
+                    <li class="cartao revelar">
+                        <h3>Andaiá II</h3>
+                        <p><strong>Médica:</strong> Aline</p>
+                        <p><strong>Enfermeira:</strong> Gemima</p>
+                        <p><strong>Agentes comunitários:</strong> Mateus, Joselita Amaral, Graziele e Silvana</p>
+                    </li>
+                    <li class="cartao revelar">
+                        <h3>Andaiá III</h3>
+                        <p><strong>Médico:</strong> Lucas</p>
+                        <p><strong>Enfermeira:</strong> Queli</p>
+                        <p><strong>Agentes comunitários:</strong> Anderson, Railda, Bárbara, Janecy e Soledade</p>
+                    </li>
                 </ul>
             </div>
         </section>
 
         <!-- 7. REMÉDIOS -->
-        <section class="tela tela-alt" id="remedios">
+        <section class="tela" id="remedios">
             <div class="pagina">
-                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Remédios</p>
+                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Medicamentos e insumos</p>
                 <h2 class="titulo revelar">
                     <span class="linha">Precisa de</span>
                     <span class="linha cor">remédio?</span>
                 </h2>
                 <ol class="passos">
-                    <li class="revelar"><span class="passo-num">1</span>Traga a receita</li>
-                    <li class="revelar"><span class="passo-num">2</span>Traga o documento de identidade</li>
+                    <li class="revelar"><span class="passo-num">1</span>Traga a receita atualizada</li>
+                    <li class="revelar"><span class="passo-num">2</span>Traga um documento oficial com foto</li>
                     <li class="revelar"><span class="passo-num">3</span>Retire na farmácia da USF</li>
                 </ol>
+
                 <div class="botoes revelar">
-                    <!-- Troque pelo link da lista de medicamentos disponíveis -->
-                    <!-- botão para ver lista de remedios disponiveis em aguardo 
-                    
-                    <a href="#" class="pilula pilula-vazada">Ver remédios disponíveis <span aria-hidden="true">→</span></a>
-                    
-                    -->
+                    <button type="button" class="pilula pilula-cheia" id="btn-remedios" aria-expanded="false" aria-controls="lista-remedios" hidden>
+                        Ver remédios disponíveis <span aria-hidden="true">↓</span>
+                    </button>
+                </div>
+
+                <div class="remedios" id="lista-remedios">
+                    <div class="remedios-topo">
+                        <label class="busca">
+                            <span>Procure pelo nome</span>
+                            <input type="search" id="busca-remedio" placeholder="Ex.: losartana" autocomplete="off">
+                        </label>
+                        <p class="atualizado">58 medicamentos na lista · Atualizado em: <span class="falta">dd/mm/aaaa</span></p>
+                    </div>
+                    <p class="sem-resultado" id="sem-resultado" hidden>Nenhum remédio encontrado com esse nome. Pergunte na farmácia da USF.</p>
+                    <ul class="categorias">
+                    <li class="categoria">
+                        <h3>Analgésicos</h3>
+                        <ul><li>Dipirona</li><li>Paracetamol</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Antialérgicos</h3>
+                        <ul><li>Loratadina</li><li>Dexclorfeniramina</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Antiarrítmicos</h3>
+                        <ul><li>Amiodarona</li><li>Digoxina</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Antibióticos</h3>
+                        <ul><li>Amoxicilina</li><li>Amoxicilina + clavulanato</li><li>Benzilpenicilina benzatina</li><li>Cefalexina</li><li>Sulfametoxazol + trimetoprima (Bactrim)</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Anticoncepcionais</h3>
+                        <ul><li>Acetato de medroxiprogesterona (trimestral)</li><li>Etonogestrel (Implanon)</li><li>Levonorgestrel + etinilestradiol (ciclo 21)</li><li>Noretisterona (minipílula)</li><li>Noretisterona + estradiol (mensal)</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Anticoagulantes</h3>
+                        <ul><li>Ácido acetilsalicílico (AAS)</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Antiemético</h3>
+                        <ul><li>Metoclopramida</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Antifúngicos</h3>
+                        <ul><li>Miconazol</li><li>Nistatina</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Anti-hipertensivos</h3>
+                        <ul><li>Anlodipino</li><li>Atenolol</li><li>Captopril</li><li>Carvedilol</li><li>Enalapril</li><li>Espironolactona</li><li>Furosemida</li><li>Hidroclorotiazida</li><li>Losartana</li><li>Metildopa</li><li>Metoprolol</li><li>Nifedipino</li><li>Propranolol</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Anti-inflamatórios</h3>
+                        <ul><li>Ibuprofeno</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Antiparasitários</h3>
+                        <ul><li>Albendazol</li><li>Ivermectina</li><li>Secnidazol</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Broncodilatador</h3>
+                        <ul><li>Salbutamol</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Corticosteroides</h3>
+                        <ul><li>Beclometasona</li><li>Dexametasona</li><li>Prednisona</li><li>Prednisolona</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Hidratação oral</h3>
+                        <ul><li>Sachê de sal de reidratação</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Hipoglicemiantes</h3>
+                        <ul><li>Glibenclamida</li><li>Gliclazida</li><li>Insulina NPH</li><li>Insulina regular</li><li>Metformina</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Hipolipemiantes</h3>
+                        <ul><li>Sinvastatina</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Hormônio</h3>
+                        <ul><li>Levotiroxina</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Protetor do estômago (IBP)</h3>
+                        <ul><li>Omeprazol</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Pomadas</h3>
+                        <ul><li>Aciclovir</li><li>Dexametasona</li><li>Metronidazol</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Suplementação</h3>
+                        <ul><li>Ácido fólico</li><li>Sulfato ferroso</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Vitaminas</h3>
+                        <ul><li>Carbonato de cálcio + colecalciferol</li></ul>
+                    </li>
+                    <li class="categoria">
+                        <h3>Xaropes</h3>
+                        <ul><li>Guaco</li></ul>
+                    </li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- 8. SEMANA -->
-        <section class="tela" id="semana">
+        <!-- 8. ENCAMINHAMENTO -->
+        <section class="tela tela-alt" id="encaminhamento">
             <div class="pagina">
-                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Agenda</p>
+                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Encaminhamento</p>
+                <h2 class="titulo revelar">
+                    <span class="linha">Precisa de</span>
+                    <span class="linha cor">especialista?</span>
+                </h2>
+                <ol class="fluxo">
+                    <li class="revelar"><span class="passo-num">1</span><strong>Consulta na USF</strong>O profissional avalia e, se precisar, pede o encaminhamento.</li>
+                    <li class="revelar"><span class="passo-num">2</span><strong>Regulação</strong>O pedido vai para a central de regulação, que marca a vaga.</li>
+                    <li class="revelar"><span class="passo-num">3</span><strong>Aviso</strong>A USF ou o seu agente comunitário avisa a data e o local.</li>
+                    <li class="revelar"><span class="passo-num">4</span><strong>Especialista</strong>Você é atendido no serviço especializado.</li>
+                    <li class="revelar"><span class="passo-num">5</span><strong>Volta à USF</strong>Traga o retorno do especialista para continuar o cuidado aqui.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 9. ATIVIDADES E EDUCAÇÃO EM SAÚDE -->
+        <section class="tela" id="atividades">
+            <div class="pagina">
+                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Atividades e educação em saúde</p>
                 <h2 class="titulo revelar">
                     <span class="linha">Esta semana</span>
                     <span class="linha cor">na USF.</span>
@@ -189,10 +399,16 @@
                     <li class="revelar"><strong>Qui</strong><span class="falta">atividade</span></li>
                     <li class="revelar"><strong>Sex</strong><span class="falta">atividade</span></li>
                 </ul>
+                <h3 class="subtitulo revelar">Grupos, campanhas e vacinação</h3>
+                <ul class="cartoes cartoes-pequenos">
+                    <li class="cartao revelar"><h3>👥 Grupos</h3><p class="falta">Nome do grupo, dia e horário</p></li>
+                    <li class="cartao revelar"><h3>📣 Campanhas</h3><p class="falta">Campanha atual e período</p></li>
+                    <li class="cartao revelar"><h3>💉 Vacinação</h3><p class="falta">Vacinas em destaque e dias de aplicação</p></li>
+                </ul>
             </div>
         </section>
 
-        <!-- 9. EMERGÊNCIA -->
+        <!-- 10. EMERGÊNCIA -->
         <section class="tela tela-emergencia" id="emergencia">
             <div class="pagina">
                 <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Emergência</p>
@@ -207,15 +423,15 @@
             </div>
         </section>
 
-        <!-- 10. EQUIPE (discreto) -->
-        <section class="equipe" id="equipe">
+        <!-- 11. LINKS ÚTEIS (discreto) -->
+        <section class="equipe" id="links">
             <div class="pagina">
-                <p class="selo"><span class="ponto" aria-hidden="true"></span>Links Úteis</p>
+                <p class="selo"><span class="ponto" aria-hidden="true"></span>Links úteis</p>
                 <ul class="links-equipe">
-        
-                    <li><a href="https://cnes.datasus.gov.br/" target="_blank" rel="noopener">CNES ↗</a></li>
                     <li><a href="https://www.gov.br/saude/" target="_blank" rel="noopener">Ministério da Saúde ↗</a></li>
                     <li><a href="https://www.saude.ba.gov.br/" target="_blank" rel="noopener">SESAB ↗</a></li>
+                    <li><a href="https://cnes.datasus.gov.br/" target="_blank" rel="noopener">CNES ↗</a></li>
+                    <li><a href="https://linktree-profissionais.netlify.app/" target="_blank" rel="noopener">Área dos profissionais ↗</a></li>
                 </ul>
             </div>
         </section>
@@ -223,8 +439,8 @@
 
     <footer class="rodape">
         <div class="pagina">
-            <p><span class="destaque">USF Andaia</span> · áreas I, II e III</p>
-            <p class="rodape-pequeno">&copy; <span id="ano"></span> · USF Digital · PET - Saúde digital · GAT 9</p>
+            <p><span class="destaque">USF Andaiá</span> · equipes I, II e III</p>
+            <p class="rodape-pequeno">&copy; <span id="ano"></span> · USF Digital · PET-Saúde Digital · GAT 9</p>
         </div>
     </footer>
 </body>

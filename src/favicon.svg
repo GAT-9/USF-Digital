@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>USF Andaia</title>
+  <circle cx="32" cy="32" r="30" fill="#1677c9"/>
+  <path d="M27 14 h10 v13 h13 v10 h-13 v13 h-10 v-13 h-13 v-10 h13 Z"
+        fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>
+</svg>

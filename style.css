@@ -1,17 +1,17 @@
 /* =========================================================
-   USF Andaia — landing page escura, uma ideia por tela.
+   USF Andaia — landing page clara, uma ideia por tela.
    Letra grande, alto contraste, pouco texto.
    ========================================================= */
 
 :root {
-    --fundo: #0a1112;
-    --fundo-alt: #0f1b1d;
-    --texto: #f3f7f7;
-    --texto-suave: #c3d4d7;    /* contraste alto sobre o fundo escuro */
-    --cor: #2cc5d6;            /* ciano claro: legível no escuro */
-    --cor-escura: #0a1112;
+    --fundo: #ffffff;
+    --fundo-alt: #f1f6fb;
+    --texto: #10202e;
+    --texto-suave: #4a5b6b;   /* cinza-azulado legível sobre o branco */
+    --cor: #1677c9;           /* azul do ícone */
+    --cor-escura: #ffffff;    /* texto sobre fundos azuis */
     --vermelho: #b42318;
-    --falta: #ffc266;
+    --falta: #b45309;
 }
 
 * {
@@ -19,7 +19,7 @@
 }
 
 html {
-    font-size: 137.5%; /* 22px: letra grande desde o início */
+    font-size: 125%; /* 22px: letra grande desde o início */
     scroll-behavior: smooth;
 }
 
@@ -49,7 +49,7 @@ a {
 }
 
 :focus-visible {
-    outline: 4px solid #f59e0b;
+    outline: 4px solid #c2410c;
     outline-offset: 4px;
 }
 
@@ -67,7 +67,7 @@ a {
     z-index: 100;
     padding: 12px 20px;
     background: #ffffff;
-    color: var(--cor-escura);
+    color: var(--cor);
     font-weight: 700;
     border-radius: 8px;
 }
@@ -115,7 +115,7 @@ a {
 }
 
 .pilula-cheia:hover {
-    background-color: #5ad6e3;
+    background-color: #0f5fa3;
 }
 
 .pilula-vazada {
@@ -124,7 +124,7 @@ a {
 }
 
 .pilula-vazada:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(16, 32, 46, 0.06);
 }
 
 .pilula-branca {
@@ -150,9 +150,9 @@ a {
     position: sticky;
     top: 0;
     z-index: 10;
-    background-color: rgba(10, 17, 18, 0.94);
+    background-color: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(16, 32, 46, 0.1);
 }
 
 /* Tudo no topo usa px: a barra não cresce com o A+ */
@@ -210,7 +210,7 @@ a {
 .fonte-controles button {
     width: 52px;
     height: 52px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(16, 32, 46, 0.25);
     border-radius: 50%;
     background: transparent;
     color: var(--texto);
@@ -288,12 +288,22 @@ a {
 
 .tela-abertura {
     background:
-        radial-gradient(circle at 78% 50%, rgba(44, 197, 214, 0.16), transparent 42%),
+        radial-gradient(circle at 78% 50%, rgba(22, 119, 201, 0.10), transparent 42%),
         var(--fundo);
 }
 
 .tela-emergencia {
     background-color: var(--vermelho);
+    color: #ffffff;
+}
+
+.tela-emergencia .texto {
+    color: #ffffff;
+}
+
+.tela-emergencia .pilula-vazada {
+    border-color: #ffffff;
+    color: #ffffff;
 }
 
 .tela-emergencia .ponto {
@@ -375,7 +385,7 @@ a {
     width: 100%;
     max-width: 440px;
     justify-self: center;
-    filter: drop-shadow(0 0 40px rgba(44, 197, 214, 0.35));
+    filter: drop-shadow(0 0 40px rgba(22, 119, 201, 0.25));
 }
 
 /* ---------- Áreas I, II, III ---------- */
@@ -484,7 +494,7 @@ a {
 
 .equipe {
     padding: 3rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(16, 32, 46, 0.1);
 }
 
 .links-equipe {
@@ -504,7 +514,7 @@ a {
 
 .rodape {
     padding: 2rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(16, 32, 46, 0.1);
     text-align: center;
     color: var(--texto-suave);
 }
@@ -512,6 +522,350 @@ a {
 .rodape-pequeno {
     margin-top: 0.4rem;
     font-size: 0.8rem;
+}
+
+/* ---------- Onde fica + horário + mapa ---------- */
+
+.duas-colunas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+    gap: 2.4rem;
+    align-items: center;
+}
+
+.horario {
+    margin-top: 2rem;
+}
+
+.horario-dias {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.horario .numero-gigante {
+    margin-top: 0.4rem;
+    font-size: min(2.6rem, 12vw);
+}
+
+.horario .texto {
+    margin-top: 0.8rem;
+}
+
+.mapa {
+    width: 100%;
+    min-height: 360px;
+    aspect-ratio: 4 / 3;
+    border: 0;
+    border-radius: 24px;
+    box-shadow: 0 12px 40px rgba(16, 32, 46, 0.12);
+}
+
+/* ---------- Abas (agenda por equipe) ---------- */
+
+.abas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 2rem;
+}
+
+.aba {
+    min-height: 52px;
+    padding: 0.3em 1.2em;
+    border: 2px solid var(--cor);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--cor);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.aba[aria-selected="true"] {
+    background-color: var(--cor);
+    color: #ffffff;
+}
+
+.painel-aba {
+    margin-top: 1.6rem;
+}
+
+.painel-titulo {
+    margin: 0 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.profissionais {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.6rem;
+}
+
+.profissionais li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 0.9rem;
+    align-items: center;
+    flex: 1 1 15rem;
+    max-width: 24rem;
+    padding: 1rem 1.3rem;
+    border-left: 6px solid var(--cor);
+    border-radius: 18px;
+    background-color: var(--fundo-alt);
+}
+
+.prof-icone {
+    grid-row: 1 / 3;
+    display: grid;
+    place-items: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    background-color: var(--fundo);
+    font-size: 1.6rem;
+}
+
+.prof-papel {
+    color: var(--texto-suave);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.profissionais strong {
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.15;
+}
+
+.agenda {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.agenda th,
+.agenda td {
+    padding: 0.8em 0.9em;
+    border-bottom: 1px solid rgba(16, 32, 46, 0.1);
+    text-align: left;
+    vertical-align: top;
+}
+
+.agenda thead th {
+    color: var(--texto-suave);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.agenda tbody th {
+    color: var(--cor);
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+/* No celular, cada dia vira um cartão */
+@media (max-width: 760px) {
+    .agenda thead {
+        display: none;
+    }
+
+    .agenda,
+    .agenda tbody,
+    .agenda tr,
+    .agenda th,
+    .agenda td {
+        display: block;
+    }
+
+    .agenda tr {
+        margin-bottom: 1rem;
+        padding: 1rem 1.1rem;
+        border-radius: 18px;
+        background-color: var(--fundo-alt);
+    }
+
+    .agenda th,
+    .agenda td {
+        padding: 0.25em 0;
+        border: 0;
+    }
+
+    .agenda tbody th {
+        font-size: 1.15rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .agenda td::before {
+        content: attr(data-rotulo) ": ";
+        color: var(--texto-suave);
+        font-weight: 600;
+    }
+}
+
+/* ---------- Cartões (equipes, atividades) ---------- */
+
+.cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+    gap: 1.4rem;
+    margin-top: 2.4rem;
+}
+
+.cartao {
+    padding: 1.4rem 1.5rem;
+    border-radius: 22px;
+    background-color: var(--fundo);
+    box-shadow: 0 8px 30px rgba(16, 32, 46, 0.08);
+}
+
+.tela:not(.tela-alt) .cartao {
+    background-color: var(--fundo-alt);
+    box-shadow: none;
+}
+
+.cartao h3 {
+    margin: 0 0 0.6rem;
+    color: var(--cor);
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+.cartao p + p {
+    margin-top: 0.4rem;
+}
+
+.cartoes-pequenos .cartao h3 {
+    color: var(--texto);
+    font-size: 1.1rem;
+}
+
+.subtitulo {
+    margin: 3rem 0 0;
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+/* ---------- Lista de remédios ---------- */
+
+.remedios {
+    margin-top: 2.4rem;
+}
+
+.remedios[hidden] {
+    display: none;
+}
+
+.remedios-topo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+}
+
+.busca {
+    display: grid;
+    gap: 0.4rem;
+    flex: 1 1 18rem;
+    max-width: 28rem;
+    font-weight: 700;
+}
+
+.busca input {
+    min-height: 56px;
+    padding: 0 1.1em;
+    border: 2px solid rgba(16, 32, 46, 0.25);
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--texto);
+    background-color: var(--fundo);
+}
+
+.busca input:focus {
+    border-color: var(--cor);
+}
+
+.atualizado,
+.sem-resultado {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+.sem-resultado {
+    margin-top: 1.4rem;
+    font-size: 1.05rem;
+}
+
+.categorias {
+    columns: 3 16rem;
+    column-gap: 1.6rem;
+    margin-top: 1.6rem;
+}
+
+.categoria {
+    break-inside: avoid;
+    margin-bottom: 1.4rem;
+    padding: 1.1rem 1.3rem;
+    border-radius: 18px;
+    background-color: var(--fundo-alt);
+}
+
+.categoria[hidden],
+.categoria li[hidden] {
+    display: none;
+}
+
+.categoria h3 {
+    margin: 0 0 0.4rem;
+    color: var(--cor);
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.categoria li {
+    padding: 0.2em 0;
+    font-weight: 600;
+}
+
+/* ---------- Fluxo do encaminhamento ---------- */
+
+.fluxo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+    gap: 1.4rem;
+    margin-top: 2.4rem;
+}
+
+.fluxo li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}
+
+.fluxo strong {
+    margin-top: 0.4rem;
+    color: var(--texto);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+button.pilula {
+    border: 0;
+    font-family: inherit;
+    cursor: pointer;
 }
 
 /* ---------- Aparecer ao rolar ---------- */
