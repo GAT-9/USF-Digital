@@ -89,12 +89,13 @@ const semResultado = document.getElementById('sem-resultado');
 if (btnRemedios && listaRemedios) {
     btnRemedios.hidden = false;
     listaRemedios.hidden = true;
+    const textoOriginal = btnRemedios.firstChild.textContent; // usa o texto escrito no HTML
 
     btnRemedios.addEventListener('click', () => {
         const abrir = listaRemedios.hidden;
         listaRemedios.hidden = !abrir;
         btnRemedios.setAttribute('aria-expanded', abrir);
-        btnRemedios.firstChild.textContent = abrir ? 'Esconder lista ' : 'Ver remédios disponíveis ';
+        btnRemedios.firstChild.textContent = abrir ? 'Esconder lista ' : textoOriginal;
         btnRemedios.querySelector('span').textContent = abrir ? '↑' : '↓';
         if (abrir) busca.focus({ preventScroll: true });
     });
