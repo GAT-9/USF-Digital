@@ -268,10 +268,42 @@ a {
     font-size: 20px;
 }
 
-/* Em telas estreitas, some com os links do menu (tudo está na rolagem) */
+/* Em telas estreitas, o menu vira uma segunda linha de atalhos que rola para o lado */
 @media (max-width: 900px) {
+    .nav {
+        flex-wrap: wrap;
+        row-gap: 0;
+        min-height: 0;
+        padding-top: 10px;
+    }
+
     .menu {
+        order: 3;
+        width: 100%;
+        gap: 8px;
+        margin: 0 -20px;
+        padding: 10px 20px 12px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        font-size: 17px;
+    }
+
+    .menu::-webkit-scrollbar {
         display: none;
+    }
+
+    .menu a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 16px;
+        border-radius: 999px;
+        background-color: var(--fundo-alt);
+        white-space: nowrap;
+    }
+
+    main > section {
+        scroll-margin-top: 130px;
     }
 }
 
@@ -439,18 +471,15 @@ main > section {
     }
 }
 
-/* Celular: a arte vira um selo pequeno acima do texto */
+/* Celular: sem a arte, direto às informações */
 @media (max-width: 759px) {
     .tela-abertura {
-        align-items: flex-start;
-        min-height: 0;
-        padding-top: 2.4rem;
+        padding: 2rem 0 2.4rem;
+        background: var(--fundo);
     }
 
     .arte {
-        order: -1;
-        max-width: 170px;
-        justify-self: start;
+        display: none;
     }
 }
 
@@ -783,21 +812,21 @@ main > section {
     white-space: nowrap;
 }
 
-/* No celular, cada dia vira um cartão */
+/* No celular, cada dia vira um cartão com manhã e tarde lado a lado */
 @media (max-width: 760px) {
     .agenda thead {
         display: none;
     }
 
     .agenda,
-    .agenda tbody,
-    .agenda tr,
-    .agenda th,
-    .agenda td {
+    .agenda tbody {
         display: block;
     }
 
     .agenda tr {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 6.5rem), 1fr));
+        gap: 0.7rem 0.9rem;
         margin-bottom: 1rem;
         padding: 1rem 1.1rem;
         border-radius: 18px;
@@ -806,19 +835,28 @@ main > section {
 
     .agenda th,
     .agenda td {
-        padding: 0.25em 0;
+        display: block;
+        padding: 0;
         border: 0;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.3;
     }
 
     .agenda tbody th {
-        font-size: 1.15rem;
-        margin-bottom: 0.3rem;
+        grid-column: 1 / -1;
+        font-size: 1.2rem;
     }
 
     .agenda td::before {
-        content: attr(data-rotulo) ": ";
+        content: attr(data-rotulo);
+        display: block;
+        margin-bottom: 0.15rem;
         color: var(--texto-suave);
-        font-weight: 600;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
     }
 }
 
@@ -964,7 +1002,7 @@ main > section {
 .fluxo li {
     position: relative;
     display: grid;
-    grid-template-columns: 2.6rem 1fr;
+    grid-template-columns: 2.6rem minmax(0, 1fr);
     column-gap: 1.2rem;
     padding-bottom: 2rem;
 }
@@ -1043,5 +1081,134 @@ button.pilula {
 
     .pilula {
         transition: none;
+    }
+}
+
+
+/* =========================================================
+   CELULAR: leitura fácil, alvos de toque grandes, menos rolagem
+   ========================================================= */
+@media (max-width: 600px) {
+    .tela {
+        padding: 2.6rem 0;
+    }
+
+    .titulo {
+        font-size: min(2.6rem, 12vw);
+    }
+
+    .texto {
+        font-size: 1.05rem;
+    }
+
+    .grande {
+        font-size: 1.15rem;
+    }
+
+    .selo {
+        margin-bottom: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Botões da abertura: mesma largura, lado a lado */
+    /* Colunas medidas em rem: com A+ a letra cresce e os itens passam para 1 coluna */
+    .tela-abertura .botoes {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+    }
+
+    .tela-abertura .pilula {
+        font-size: 0.95rem;
+        padding: 0.45em 0.8em;
+    }
+
+    /* Serviços e "não esqueça": cartões em 2 colunas, ícone ao lado do nome */
+    .icones,
+    .icones-muitos {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 7.6rem), 1fr));
+        gap: 0.7rem;
+        margin-top: 1.6rem;
+    }
+
+    .icones li {
+        gap: 0.35rem;
+        padding: 0.9rem;
+        border-radius: 16px;
+        background-color: var(--fundo-alt);
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+
+    .tela-alt .icones li {
+        background-color: var(--fundo);
+    }
+
+    .icones span,
+    .icones-muitos span {
+        font-size: 1.8rem;
+    }
+
+    /* Abas das equipes em uma linha só */
+    .abas {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 5.2rem), 1fr));
+        gap: 8px;
+    }
+
+    .aba {
+        padding: 0.3em 0.4em;
+        font-size: 0.95rem;
+    }
+
+    .profissionais li {
+        max-width: none;
+        padding: 0.8rem 1rem;
+    }
+
+    .profissionais strong {
+        font-size: 1.25rem;
+    }
+
+    .prof-icone {
+        width: 2.6rem;
+        height: 2.6rem;
+        font-size: 1.3rem;
+    }
+
+    /* Semana: 3 por linha */
+    .semana {
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 4.6rem), 1fr));
+        gap: 1rem;
+        margin-top: 1.6rem;
+    }
+
+    .semana strong {
+        font-size: 1.5rem;
+    }
+
+    .passos li {
+        font-size: 1.1rem;
+    }
+
+    .cartoes {
+        gap: 0.9rem;
+        margin-top: 1.6rem;
+    }
+
+    .mapa {
+        min-height: 260px;
+        border-radius: 18px;
+    }
+
+    .horario .numero-gigante {
+        font-size: 2rem;
+    }
+
+    .categorias {
+        columns: 1;
+    }
+
+    .subtitulo {
+        margin-top: 2rem;
+        font-size: 1.2rem;
     }
 }
