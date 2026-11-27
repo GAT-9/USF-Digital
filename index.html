@@ -26,7 +26,7 @@
             <ul class="menu">
                 <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#equipes">Equipes</a></li>
-                <li><a href="#remedios">Remedios</a></li>
+                <li><a href="#remedios">Remédios</a></li>
             </ul>
             <div class="fonte-controles" role="group" aria-label="Tamanho da letra">
                 <button type="button" data-fonte="-1" aria-label="Diminuir a letra">A−</button>
@@ -91,8 +91,8 @@
                     <p class="grande revelar">📍 R. Teodoro Dias Barreto, 787 — Andaiá, Santo Antônio de Jesus – BA, 44434-532</p>
                     <div class="horario revelar" id="horario">
                         <p class="horario-dias">Segunda a sexta</p>
-                        <p class="numero-gigante cor"><span class="falta">07h às 12h<br>13h às 17h</span></p>
-                        <p class="texto">Sábado, domingo e feriado: fechado.</p>
+                        <p class="numero-gigante cor">07h às 12h<br>13h às 17h</p>
+                        <p class="texto warning"><span aria-hidden="true">⚠️</span> <strong>Sábado, domingo e feriado: fechado.</strong></p>
                     </div>
                 </div>
                 <iframe class="mapa revelar"
@@ -162,32 +162,48 @@
                     <ul class="profissionais">
                         <li><span class="prof-icone" aria-hidden="true">🩺</span><span class="prof-papel">Médica</span><strong>Ana Verena</strong></li>
                         <li><span class="prof-icone" aria-hidden="true">👩‍⚕️</span><span class="prof-papel">Enfermeira</span><strong>Erojane</strong></li>
+                        <li class="prof-lista"><span class="prof-icone" aria-hidden="true">👥</span><span class="prof-papel">Agentes Comunitários</span><strong>Joelma, Clélia, Joselita Couto, Sandra Vanusa e Maria do Carmo (Lôra)</strong></li>
                     </ul>
                     <table class="agenda">
-                        <thead><tr><th scope="col">Dia</th><th scope="col">Médico · manhã</th><th scope="col">Médico · tarde</th><th scope="col">Enfermeira · manhã</th><th scope="col">Enfermeira · tarde</th></tr></thead>
+                        <colgroup><col class="agenda-dia"><col class="agenda-separador-col"><col span="2"><col class="agenda-separador-col"><col span="2"></colgroup>
+                        <thead>
+                            <tr><th class="agenda-dia-vazio" aria-hidden="true"></th><th class="agenda-separador" aria-hidden="true"></th><th class="grupo-manha" scope="colgroup" colspan="2"><span class="periodo periodo-manha">Manhã</span></th><th class="agenda-separador" aria-hidden="true"></th><th class="grupo-tarde" scope="colgroup" colspan="2"><span class="periodo periodo-tarde">Tarde</span></th></tr>
+                            <tr><th scope="col">Dia</th><th class="agenda-separador" aria-hidden="true"></th><th class="coluna-manha-inicio" scope="col">Médico</th><th class="coluna-manha-fim" scope="col">Enfermeira</th><th class="agenda-separador" aria-hidden="true"></th><th class="coluna-tarde-inicio" scope="col">Médico</th><th class="coluna-tarde-fim" scope="col">Enfermeira</th></tr>
+                        </thead>
                         <tbody>
-                            <tr><th scope="row">Segunda</th><td data-rotulo="Médico · manhã">População geral</td><td data-rotulo="Médico · tarde">Auto agenda</td><td data-rotulo="Enfermeira · manhã">Hiperdia</td><td data-rotulo="Enfermeira · tarde">Pré-natal</td></tr>
-                            <tr><th scope="row">Terça</th><td data-rotulo="Médico · manhã">Estágio (fora)</td><td data-rotulo="Médico · tarde">Hiperdia</td><td data-rotulo="Enfermeira · manhã">Pré-natal</td><td data-rotulo="Enfermeira · tarde">Planejamento familiar</td></tr>
-                            <tr><th scope="row">Quarta</th><td data-rotulo="Médico · manhã">Pré-natal</td><td data-rotulo="Médico · tarde">Aula (turno fora)</td><td data-rotulo="Enfermeira · manhã">Preventivo</td><td data-rotulo="Enfermeira · tarde">Demanda espontânea</td></tr>
-                            <tr><th scope="row">Quinta</th><td data-rotulo="Médico · manhã">Puericultura</td><td data-rotulo="Médico · tarde">Hiperdia</td><td data-rotulo="Enfermeira · manhã">Puericultura</td><td data-rotulo="Enfermeira · tarde">Puericultura</td></tr>
-                            <tr><th scope="row">Sexta</th><td data-rotulo="Médico · manhã">Visita domiciliar</td><td data-rotulo="Médico · tarde">Administrativo</td><td data-rotulo="Enfermeira · manhã">Visita domiciliar / Hiperdia</td><td data-rotulo="Enfermeira · tarde">Demanda espontânea</td></tr>
+                            <tr><th scope="row">Segunda</th><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · manhã">População geral</td><td data-rotulo="Enfermeira · manhã">Hiperdia</td><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · tarde">Auto agenda</td><td data-rotulo="Enfermeira · tarde">Pré-natal</td></tr>
+                            <tr><th scope="row">Terça</th><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · manhã">Estágio (fora)</td><td data-rotulo="Enfermeira · manhã">Pré-natal</td><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · tarde">Hiperdia</td><td data-rotulo="Enfermeira · tarde">Planejamento familiar</td></tr>
+                            <tr><th scope="row">Quarta</th><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · manhã">Pré-natal</td><td data-rotulo="Enfermeira · manhã">Preventivo</td><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · tarde">Aula (turno fora)</td><td data-rotulo="Enfermeira · tarde">Demanda espontânea</td></tr>
+                            <tr><th scope="row">Quinta</th><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · manhã">Puericultura</td><td data-rotulo="Enfermeira · manhã">Puericultura</td><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · tarde">Hiperdia</td><td data-rotulo="Enfermeira · tarde">Puericultura</td></tr>
+                            <tr><th scope="row">Sexta</th><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · manhã">Visita domiciliar</td><td data-rotulo="Enfermeira · manhã">Visita domiciliar / Hiperdia</td><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · tarde">Administrativo</td><td data-rotulo="Enfermeira · tarde">Demanda espontânea</td></tr>
                         </tbody>
                     </table>
+                        <h3 class="subtitulo revelar">Grupos, campanhas e vacinação</h3>
+                    <ul class="cartoes cartoes-pequenos">
+                        <li class="cartao revelar"><h3>👥 Grupos</h3><p class="falta">Nome do grupo, dia e horário</p></li>
+                        <li class="cartao revelar"><h3>📣 Campanhas</h3><p class="falta">Campanha atual e período</p></li>
+                        <li class="cartao revelar"><h3>💉 Vacinação</h3><p class="falta">Vacinas em destaque e dias de aplicação</p></li>
+                    </ul>
                 </div>
                 <div class="painel-aba" role="tabpanel" id="painel-andaia-2" aria-labelledby="aba-andaia-2">
                     <h3 class="painel-titulo">Andaiá II</h3>
                     <ul class="profissionais">
                         <li><span class="prof-icone" aria-hidden="true">🩺</span><span class="prof-papel">Médica</span><strong>Aline</strong></li>
                         <li><span class="prof-icone" aria-hidden="true">👩‍⚕️</span><span class="prof-papel">Enfermeira</span><strong>Gemima</strong></li>
+                        <li class="prof-lista"><span class="prof-icone" aria-hidden="true">👥</span><span class="prof-papel">Agentes Comunitários</span><strong>Mateus, Joselita Amaral, Graziele e Silvana</strong></li>
                     </ul>
                     <table class="agenda">
-                        <thead><tr><th scope="col">Dia</th><th scope="col">Médico · manhã</th><th scope="col">Médico · tarde</th><th scope="col">Enfermeira · manhã</th><th scope="col">Enfermeira · tarde</th></tr></thead>
+                        <colgroup><col class="agenda-dia"><col class="agenda-separador-col"><col span="2"><col class="agenda-separador-col"><col span="2"></colgroup>
+                        <thead>
+                            <tr><th class="agenda-dia-vazio" aria-hidden="true"></th><th class="agenda-separador" aria-hidden="true"></th><th class="grupo-manha" scope="colgroup" colspan="2"><span class="periodo periodo-manha">Manhã</span></th><th class="agenda-separador" aria-hidden="true"></th><th class="grupo-tarde" scope="colgroup" colspan="2"><span class="periodo periodo-tarde">Tarde</span></th></tr>
+                            <tr><th scope="col">Dia</th><th class="agenda-separador" aria-hidden="true"></th><th class="coluna-manha-inicio" scope="col">Médico</th><th class="coluna-manha-fim" scope="col">Enfermeira</th><th class="agenda-separador" aria-hidden="true"></th><th class="coluna-tarde-inicio" scope="col">Médico</th><th class="coluna-tarde-fim" scope="col">Enfermeira</th></tr>
+                        </thead>
                         <tbody>
-                            <tr><th scope="row">Segunda</th><td data-rotulo="Médico · manhã">População geral</td><td data-rotulo="Médico · tarde">Hiperdia</td><td data-rotulo="Enfermeira · manhã">Hiperdia</td><td data-rotulo="Enfermeira · tarde">1º pré-natal</td></tr>
-                            <tr><th scope="row">Terça</th><td data-rotulo="Médico · manhã">Pré-natal</td><td data-rotulo="Médico · tarde">—</td><td data-rotulo="Enfermeira · manhã">Pré-natal</td><td data-rotulo="Enfermeira · tarde">Demanda livre</td></tr>
-                            <tr><th scope="row">Quarta</th><td data-rotulo="Médico · manhã">Visita domiciliar</td><td data-rotulo="Médico · tarde">Administrativo</td><td data-rotulo="Enfermeira · manhã">Preventivo</td><td data-rotulo="Enfermeira · tarde">Planejamento familiar</td></tr>
-                            <tr><th scope="row">Quinta</th><td data-rotulo="Médico · manhã">Puericultura</td><td data-rotulo="Médico · tarde">Administrativo</td><td data-rotulo="Enfermeira · manhã">Puericultura</td><td data-rotulo="Enfermeira · tarde">Puericultura</td></tr>
-                            <tr><th scope="row">Sexta</th><td data-rotulo="Médico · manhã">Planejamento familiar</td><td data-rotulo="Médico · tarde">Planejamento familiar</td><td data-rotulo="Enfermeira · manhã">Visita domiciliar</td><td data-rotulo="Enfermeira · tarde">Administrativo</td></tr>
+                            <tr><th scope="row">Segunda</th><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · manhã">População geral</td><td data-rotulo="Enfermeira · manhã">Hiperdia</td><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · tarde">Hiperdia</td><td data-rotulo="Enfermeira · tarde">1º pré-natal</td></tr>
+                            <tr><th scope="row">Terça</th><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · manhã">Pré-natal</td><td data-rotulo="Enfermeira · manhã">Pré-natal</td><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · tarde">—</td><td data-rotulo="Enfermeira · tarde">Demanda livre</td></tr>
+                            <tr><th scope="row">Quarta</th><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · manhã">Visita domiciliar</td><td data-rotulo="Enfermeira · manhã">Preventivo</td><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · tarde">Administrativo</td><td data-rotulo="Enfermeira · tarde">Planejamento familiar</td></tr>
+                            <tr><th scope="row">Quinta</th><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · manhã">Puericultura</td><td data-rotulo="Enfermeira · manhã">Puericultura</td><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · tarde">Administrativo</td><td data-rotulo="Enfermeira · tarde">Puericultura</td></tr>
+                            <tr><th scope="row">Sexta</th><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · manhã">Planejamento familiar</td><td data-rotulo="Enfermeira · manhã">Visita domiciliar</td><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · tarde">Planejamento familiar</td><td data-rotulo="Enfermeira · tarde">Administrativo</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -196,54 +212,29 @@
                     <ul class="profissionais">
                         <li><span class="prof-icone" aria-hidden="true">🩺</span><span class="prof-papel">Médico</span><strong>Lucas</strong></li>
                         <li><span class="prof-icone" aria-hidden="true">👩‍⚕️</span><span class="prof-papel">Enfermeira</span><strong>Queli</strong></li>
+                        <li class="prof-lista"><span class="prof-icone" aria-hidden="true">👥</span><span class="prof-papel">Agentes Comunitários</span><strong>Anderson, Railda, Bárbara, Janecy e Soledade</strong></li>
+
                     </ul>
                     <table class="agenda">
-                        <thead><tr><th scope="col">Dia</th><th scope="col">Médico · manhã</th><th scope="col">Médico · tarde</th><th scope="col">Enfermeira · manhã</th><th scope="col">Enfermeira · tarde</th></tr></thead>
+                        <colgroup><col class="agenda-dia"><col class="agenda-separador-col"><col span="2"><col class="agenda-separador-col"><col span="2"></colgroup>
+                        <thead>
+                            <tr><th class="agenda-dia-vazio" aria-hidden="true"></th><th class="agenda-separador" aria-hidden="true"></th><th class="grupo-manha" scope="colgroup" colspan="2"><span class="periodo periodo-manha">Manhã</span></th><th class="agenda-separador" aria-hidden="true"></th><th class="grupo-tarde" scope="colgroup" colspan="2"><span class="periodo periodo-tarde">Tarde</span></th></tr>
+                            <tr><th scope="col">Dia</th><th class="agenda-separador" aria-hidden="true"></th><th class="coluna-manha-inicio" scope="col">Médico</th><th class="coluna-manha-fim" scope="col">Enfermeira</th><th class="agenda-separador" aria-hidden="true"></th><th class="coluna-tarde-inicio" scope="col">Médico</th><th class="coluna-tarde-fim" scope="col">Enfermeira</th></tr>
+                        </thead>
                         <tbody>
-                            <tr><th scope="row">Segunda</th><td data-rotulo="Médico · manhã">Puericultura</td><td data-rotulo="Médico · tarde">Hiperdia</td><td data-rotulo="Enfermeira · manhã">—</td><td data-rotulo="Enfermeira · tarde">Demanda livre</td></tr>
-                            <tr><th scope="row">Terça</th><td data-rotulo="Médico · manhã">Estágio (fora)</td><td data-rotulo="Médico · tarde">População geral</td><td data-rotulo="Enfermeira · manhã">Pré-natal</td><td data-rotulo="Enfermeira · tarde">Administrativo</td></tr>
-                            <tr><th scope="row">Quarta</th><td data-rotulo="Médico · manhã">Pré-natal</td><td data-rotulo="Médico · tarde">Aula (turno fora)</td><td data-rotulo="Enfermeira · manhã">Preventivo</td><td data-rotulo="Enfermeira · tarde">Puericultura / Planejamento familiar</td></tr>
-                            <tr><th scope="row">Quinta</th><td data-rotulo="Médico · manhã">Hiperdia</td><td data-rotulo="Médico · tarde">População geral</td><td data-rotulo="Enfermeira · manhã">—</td><td data-rotulo="Enfermeira · tarde">—</td></tr>
-                            <tr><th scope="row">Sexta</th><td data-rotulo="Médico · manhã">Visita domiciliar</td><td data-rotulo="Médico · tarde">Administrativo</td><td data-rotulo="Enfermeira · manhã">Visita domiciliar</td><td data-rotulo="Enfermeira · tarde">Demanda livre</td></tr>
+                            <tr><th scope="row">Segunda</th><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · manhã">Puericultura</td><td data-rotulo="Enfermeira · manhã">—</td><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · tarde">Hiperdia</td><td data-rotulo="Enfermeira · tarde">Demanda livre</td></tr>
+                            <tr><th scope="row">Terça</th><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · manhã">Estágio (fora)</td><td data-rotulo="Enfermeira · manhã">Pré-natal</td><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · tarde">População geral</td><td data-rotulo="Enfermeira · tarde">Administrativo</td></tr>
+                            <tr><th scope="row">Quarta</th><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · manhã">Pré-natal</td><td data-rotulo="Enfermeira · manhã">Preventivo</td><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · tarde">Aula (turno fora)</td><td data-rotulo="Enfermeira · tarde">Puericultura / Planejamento familiar</td></tr>
+                            <tr><th scope="row">Quinta</th><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · manhã">Hiperdia</td><td data-rotulo="Enfermeira · manhã">—</td><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · tarde">População geral</td><td data-rotulo="Enfermeira · tarde">—</td></tr>
+                            <tr><th scope="row">Sexta</th><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · manhã">Visita domiciliar</td><td data-rotulo="Enfermeira · manhã">Visita domiciliar</td><td class="agenda-separador" aria-hidden="true"></td><td data-rotulo="Médico · tarde">Administrativo</td><td data-rotulo="Enfermeira · tarde">Demanda livre</td></tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </section>
 
-        <!-- 6. EQUIPES E MICROÁREAS -->
-        <section class="tela tela-alt" id="equipes">
-            <div class="pagina">
-                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Equipes e território</p>
-                <h2 class="titulo revelar">
-                    <span class="linha">Três equipes,</span>
-                    <span class="linha cor">uma USF.</span>
-                </h2>
-                <ul class="cartoes">
-                    <li class="cartao revelar">
-                        <h3>Andaiá I</h3>
-                        <p><strong>Médica:</strong> Ana Verena</p>
-                        <p><strong>Enfermeira:</strong> Erojane</p>
-                        <p><strong>Agentes comunitários:</strong> Joelma, Clélia, Joselita Couto, Sandra, Vanusa e Maria do Carmo (Lôra)</p>
-                    </li>
-                    <li class="cartao revelar">
-                        <h3>Andaiá II</h3>
-                        <p><strong>Médica:</strong> Aline</p>
-                        <p><strong>Enfermeira:</strong> Gemima</p>
-                        <p><strong>Agentes comunitários:</strong> Mateus, Joselita Amaral, Graziele e Silvana</p>
-                    </li>
-                    <li class="cartao revelar">
-                        <h3>Andaiá III</h3>
-                        <p><strong>Médico:</strong> Lucas</p>
-                        <p><strong>Enfermeira:</strong> Queli</p>
-                        <p><strong>Agentes comunitários:</strong> Anderson, Railda, Bárbara, Janecy e Soledade</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- 7. REMÉDIOS -->
-        <section class="tela" id="remedios">
+        <!-- 6. REMÉDIOS -->
+        <section class="tela tela-alt" id="remedios">
             <div class="pagina">
                 <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Medicamentos e insumos</p>
                 <h2 class="titulo revelar">
@@ -365,8 +356,8 @@
             </div>
         </section>
 
-        <!-- 8. ENCAMINHAMENTO -->
-        <section class="tela tela-alt" id="encaminhamento">
+        <!-- 7. ENCAMINHAMENTO -->
+        <section class="tela" id="encaminhamento">
             <div class="pagina">
                 <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Encaminhamento</p>
                 <h2 class="titulo revelar">
@@ -383,31 +374,10 @@
             </div>
         </section>
 
-        <!-- 9. ATIVIDADES E EDUCAÇÃO EM SAÚDE -->
-        <section class="tela" id="atividades">
-            <div class="pagina">
-                <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Atividades e educação em saúde</p>
-                <h2 class="titulo revelar">
-                    <span class="linha">Esta semana</span>
-                    <span class="linha cor">na USF.</span>
-                </h2>
-                <ul class="semana">
-                    <li class="revelar"><strong>Seg</strong><span class="falta">atividade</span></li>
-                    <li class="revelar"><strong>Ter</strong><span class="falta">atividade</span></li>
-                    <li class="revelar"><strong>Qua</strong><span class="falta">atividade</span></li>
-                    <li class="revelar"><strong>Qui</strong><span class="falta">atividade</span></li>
-                    <li class="revelar"><strong>Sex</strong><span class="falta">atividade</span></li>
-                </ul>
-                <h3 class="subtitulo revelar">Grupos, campanhas e vacinação</h3>
-                <ul class="cartoes cartoes-pequenos">
-                    <li class="cartao revelar"><h3>👥 Grupos</h3><p class="falta">Nome do grupo, dia e horário</p></li>
-                    <li class="cartao revelar"><h3>📣 Campanhas</h3><p class="falta">Campanha atual e período</p></li>
-                    <li class="cartao revelar"><h3>💉 Vacinação</h3><p class="falta">Vacinas em destaque e dias de aplicação</p></li>
-                </ul>
-            </div>
-        </section>
+        
+        
 
-        <!-- 10. EMERGÊNCIA -->
+        <!-- 8. EMERGÊNCIA -->
         <section class="tela tela-emergencia" id="emergencia">
             <div class="pagina">
                 <p class="selo revelar"><span class="ponto" aria-hidden="true"></span>Emergência</p>
@@ -422,15 +392,18 @@
             </div>
         </section>
 
-        <!-- 11. LINKS ÚTEIS (discreto) -->
+        <!-- 9. LINKS ÚTEIS (discreto) -->
         <section class="equipe" id="links">
             <div class="pagina">
                 <p class="selo"><span class="ponto" aria-hidden="true"></span>Links úteis</p>
                 <ul class="links-equipe">
-                    <li><a href="https://www.gov.br/saude/" target="_blank" rel="noopener">Ministério da Saúde ↗</a></li>
-                    <li><a href="https://www.saude.ba.gov.br/" target="_blank" rel="noopener">SESAB ↗</a></li>
+                    <li><a href="https://www.gov.br/saude/pt-br" target="_blank" rel="noopener noreferrer">Ministério da Saúde ↗</a></li>
+                    <li><a href="https://www.ba.gov.br/saude/" target="_blank" rel="noopener noreferrer">SESAB ↗</a></li>
                     <li><a href="https://cnes.datasus.gov.br/" target="_blank" rel="noopener">CNES ↗</a></li>
                     <li><a href="https://linktree-profissionais.netlify.app/" target="_blank" rel="noopener">Área dos profissionais ↗</a></li>
+                    <li><a href="https://telessaude.saude.ba.gov.br/" target="_blank" rel="noopener noreferrer">Telessaúde Bahia ↗</a></li>
+                    <li><a href="https://www.instagram.com/sms_saj/?hl=pt" target="_blank" rel="noopener noreferrer">Instagram da Secretaria Municipal de Saúde ↗</a></li>
+                    <li><a href="https://www.gov.br/pt-br/servicos/acessar-a-biblioteca-virtual-em-saude-do-ministerio-da-saude" target="_blank" rel="noopener noreferrer">Biblioteca do Ministério da Saúde ↗</a></li>
                 </ul>
             </div>
         </section>
